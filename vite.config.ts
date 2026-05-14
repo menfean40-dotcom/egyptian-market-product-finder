@@ -6,7 +6,7 @@ const __dirname = import.meta.dirname
 
 export default defineConfig({
   plugins: [react()],
-  
+
   server: {
     port: 3000,
   },
