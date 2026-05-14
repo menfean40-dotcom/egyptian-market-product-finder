@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 234 40% 5%;
+    --foreground: 240 10% 92%;
+    --card: 234 40% 8%;
+    --card-foreground: 240 10% 92%;
+    --popover: 234 40% 8%;
+    --popover-foreground: 240 10% 92%;
+    --primary: 252 100% 77%;
+    --primary-foreground: 234 40% 5%;
+    --secondary: 234 30% 15%;
+    --secondary-foreground: 240 10% 92%;
+    --muted: 234 30% 15%;
+    --muted-foreground: 248 12% 56%;
+    --accent: 252 100% 77%;
+    --accent-foreground: 234 40% 5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 252 100% 77%;
+    --radius: 0.625rem;
+    --sidebar-background: 234 40% 8%;
+    --sidebar-foreground: 240 10% 92%;
+    --sidebar-primary: 252 100% 77%;
+    --sidebar-primary-foreground: 234 40% 5%;
+    --sidebar-accent: 234 30% 15%;
+    --sidebar-accent-foreground: 240 10% 92%;
+    --sidebar-border: 240 5% 20%;
+    --sidebar-ring: 252 100% 77%;
+  }
+
+  body {
+    font-family: 'Geist Sans', 'Geist', system-ui, -apple-system, sans-serif;
+    background: #0C0C1A;
+    color: #EAEAEF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  ::selection {
+    background: rgba(157, 140, 255, 0.3);
+    color: #EAEAEF;
+  }
+
+  input, textarea, select {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .content-band {
+    background: rgba(12, 12, 26, 0.92);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+  }
+
+  .card-glow {
+    background: rgba(18, 18, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .card-glow:hover {
+    border-color: rgba(157, 140, 255, 0.2);
+    box-shadow: 0 0 30px rgba(157, 140, 255, 0.08);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all;
+    background: #9D8CFF;
+    color: #0C0C1A;
+  }
+
+  .btn-primary:hover {
+    background: #B8AEFF;
+    transform: scale(1.03);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #9D8CFF, #B8AEFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
